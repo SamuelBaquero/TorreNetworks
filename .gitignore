@@ -1,0 +1,37 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/network-api/node_modules
+/network-app/node_modules
+/network-api/.pnp
+/network-api/.pnp.js
+/network-app/.pnp
+/network-app/.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+/network-app/.DS_Store
+/network-app/.env.local
+/network-app/.env.development.local
+/network-app/.env.test.local
+/network-app/.env.production.local
+
+/network-app/npm-debug.log*
+/network-app/yarn-debug.log*
+/network-app/yarn-error.log*
+
+/network-api/.DS_Store
+/network-api/.env.local
+/network-api/.env.development.local
+/network-api/.env.test.local
+/network-api/.env.production.local
+
+/network-api/npm-debug.log*
+/network-api/yarn-debug.log*
+/network-api/yarn-error.log*
