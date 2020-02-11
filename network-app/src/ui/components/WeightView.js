@@ -32,9 +32,7 @@ class WeightView extends Component{
             return <div key={i} className='given'>
                     <div className="border-em">
                         <div>
-                            <Link to={'/network/'+given.target.metadata.publicId}>
-                                {given.target.metadata.name}
-                            </Link>
+                            {given.target.metadata.name}
                             {(given.metadata.recommendations > 1)?(' ('+given.metadata.recommendations+') '):''}
                         </div>
                         <div className='given-bar' style={{backgroundColor:rgba, width:width}}/>
@@ -51,9 +49,7 @@ class WeightView extends Component{
             return <div className='received' key={i}>
                     <div className="border-em">
                         <div>
-                            <Link to={'/network/'+received.source.metadata.publicId}>
-                                {received.source.metadata.name}
-                            </Link>
+                            {received.source.metadata.name}
                             {(received.metadata.recommendations > 1)?(' ('+received.metadata.recommendations+') '):''}
                         </div>
                         <div className='received-bar' style={{backgroundColor:rgba, width:width}}/>

@@ -56,7 +56,7 @@ class Network extends Component{
                 return(
                     <div>
                         <h1 align='center'>{this.state.shortName}'s Network</h1>
-                        <p className='paragraph'>Torre's Network shows everyone who you have recommended and who has recommended you, if it has a number after the name it means you have been recommended or recommended someone more than once. The color of the bar show the weight of the person and the lenght of the bar show the weight of the recomendation. Also you can click the name of someone to view their network.</p>
+                        <p className='paragraph'>Torre's Network shows everyone who you have recommended and who has recommended you, if it has a number after the name it means you have been recommended or recommended someone more than once. The color of the bar show the weight of the person and the lenght of the bar show the weight of the recomendation.</p>
                         <WeightView 
                             given={this.state.given}
                             received={this.state.received} 
