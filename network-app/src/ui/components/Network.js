@@ -47,22 +47,26 @@ class Network extends Component{
     render(){
         if(this.state.isLoading){
             return (
-                <div>Loading Network</div>
+                <h1 align='center'>Loading Network</h1>
             )
         }else{
-            return(
-                <div>
-                    <h1 align='center'>{this.state.shortName}'s Network</h1>
-                    <p className='paragraph'>Torre's Network shows everyone who you have recommended and who has recommended you, if it has a number after the name it means you have been recommended or recommended someone more than once. The color of the bar show the weight of the person and the lenght of the bar show the weight of the recomendation. Also you can click the name of someone to view their network.</p>
-                    <WeightView 
-                        given={this.state.given} 
-                        received={this.state.received} 
-                        maxEdgeGiven={this.state.maxEdgeGivenW} 
-                        maxEdgeReceived={this.state.maxEdgeReceiW}
-                        maxGiven={this.state.maxGiven}
-                        maxReceived={this.state.maxReceived}/>
-                </div>
-            )
+            if(typeof this.state.root === 'undefined'){
+                return(<h2>User not found</h2>)
+            }else{
+                return(
+                    <div>
+                        <h1 align='center'>{this.state.shortName}'s Network</h1>
+                        <p className='paragraph'>Torre's Network shows everyone who you have recommended and who has recommended you, if it has a number after the name it means you have been recommended or recommended someone more than once. The color of the bar show the weight of the person and the lenght of the bar show the weight of the recomendation. Also you can click the name of someone to view their network.</p>
+                        <WeightView 
+                            given={this.state.given}
+                            received={this.state.received} 
+                            maxEdgeGiven={this.state.maxEdgeGivenW} 
+                            maxEdgeReceived={this.state.maxEdgeReceiW}
+                            maxGiven={this.state.maxGiven}
+                            maxReceived={this.state.maxReceived}/>
+                    </div>
+                )
+            }
         }
     }
 }

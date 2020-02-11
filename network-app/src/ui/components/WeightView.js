@@ -65,7 +65,6 @@ class WeightView extends Component{
     render(){
         return(
             <div>
-                <p>Control Panel</p>
                 <div className='container'>
                     <div className='column'>
                         <h2 className='received-title padding-left-right'>Received</h2>
