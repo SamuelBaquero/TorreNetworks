@@ -8,11 +8,20 @@ class WeightView extends Component{
         }
     }
 
+    renderGiven(){
+        
+    }
+
+    renderReceived(){
+        
+    }
+
     render(){
         return(
             <div>
                 <p>Control Panel</p>
-                <div></div>
+                <div>{this.renderGiven()}</div>
+                <div>{this.renderReceived()}</div>
             </div>
         )
     }

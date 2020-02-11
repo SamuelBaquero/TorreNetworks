@@ -25,16 +25,14 @@ class Network extends Component{
                 }
             })
             .then((data)=>{
-                console.log(data)
-                let nodes = data.graph.nodes
-                let self = nodes[0].metadata
-                this.setState({ nodes:nodes, self:self, isLoading:false })
+                let shortName = data.root.metadata.name.split(' ')[0];
+                this.setState({ shortName:shortName, root:data.root.metadata, given:data.given, received:data.received, isLoading:false })
             })
             .catch((error)=>{
                 this.setState({ error:error, isLoading:false})
             })
     }
-    
+
     render(){
         if(this.state.isLoading){
             return (
@@ -43,8 +41,8 @@ class Network extends Component{
         }else{
             return(
                 <div>
-                    <h1>{this.state.self.name} Network</h1>
-                    <WeightView nodes={this.state.nodes} />
+                    {this.state.shortName}'s Network
+                    <WeightView given={this.state.given} received={this.state.received}/>
                 </div>
             )
         }
