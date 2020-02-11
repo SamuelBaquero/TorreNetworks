@@ -1,6 +1,8 @@
 import React, {Component } from 'react';
 import WeightView from './WeightView';
 
+import '../css/network.css';
+
 const API = 'http://localhost:9000/network/';
 
 class Network extends Component{
@@ -9,7 +11,6 @@ class Network extends Component{
         super(props)
         this.state = {
             nodes:null,
-            self:null,
             isLoading:true,
             error:null
         }
@@ -26,7 +27,17 @@ class Network extends Component{
             })
             .then((data)=>{
                 let shortName = data.root.metadata.name.split(' ')[0];
-                this.setState({ shortName:shortName, root:data.root.metadata, given:data.given, received:data.received, isLoading:false })
+                this.setState({ 
+                    shortName:shortName, 
+                    root:data.root.metadata, 
+                    given:data.given, 
+                    received:data.received, 
+                    isLoading:false,
+                    maxEdgeGivenW:data.maxEdgeGivenW,
+                    maxEdgeReceiW:data.maxEdgeReceiW,
+                    maxGiven:data.maxGiven,
+                    maxReceived:data.maxReceived
+                })
             })
             .catch((error)=>{
                 this.setState({ error:error, isLoading:false})
@@ -41,8 +52,15 @@ class Network extends Component{
         }else{
             return(
                 <div>
-                    {this.state.shortName}'s Network
-                    <WeightView given={this.state.given} received={this.state.received}/>
+                    <h1 align='center'>{this.state.shortName}'s Network</h1>
+                    <p className='paragraph'>Torre's Network shows everyone who you have recommended and who has recommended you, if it has a number after the name it means you have been recommended or recommended someone more than once. The color of the bar show the weight of the person and the lenght of the bar show the weight of the recomendation. Also you can click the name of someone to view their network.</p>
+                    <WeightView 
+                        given={this.state.given} 
+                        received={this.state.received} 
+                        maxEdgeGiven={this.state.maxEdgeGivenW} 
+                        maxEdgeReceived={this.state.maxEdgeReceiW}
+                        maxGiven={this.state.maxGiven}
+                        maxReceived={this.state.maxReceived}/>
                 </div>
             )
         }

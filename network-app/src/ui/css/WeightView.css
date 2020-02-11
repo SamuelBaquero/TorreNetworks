@@ -1,0 +1,79 @@
+.border-em{
+    margin:0.5em;
+    height: inherit;
+}
+
+a{
+    color:black;
+    text-decoration:none;
+}
+
+a:hover{
+    color:blue
+}
+
+.padding-left-right{
+    padding: 0px 5px;
+}
+
+.received-title{
+    text-align: end;
+}
+
+.container{
+    display:flex
+}
+
+.column{
+    width:50%;
+}
+
+.received{
+    height: 2.5em;
+    text-align: end;
+    width: 100%;
+}
+
+.received-bar{
+    border-radius: 25px;
+    border: 2px solid red;
+    height: 1em;
+    z-index: -1;
+    float: right;
+}
+
+.given{
+    height: 2.5em;
+    width: 100%;
+}
+
+.given-bar{
+    border-radius: 25px;
+    border: 2px solid blue;
+    height: 1em;
+    z-index: -1;
+}
+
+/**
+Rules for smaller screens
+*/
+@media screen and (max-width: 600px){
+    .received-title{
+        text-align: left;
+    }
+    .received-bar{
+        float:left;
+    }
+    .container{
+        flex-flow: column;
+    }
+    .column{
+        width: 100%;
+    }
+    .received-bar{
+        left:0px;
+    }
+    .received{
+        text-align: left;
+    }
+}

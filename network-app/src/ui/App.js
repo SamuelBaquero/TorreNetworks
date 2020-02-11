@@ -11,7 +11,7 @@ import Network from './components/Network';
 
 
 /**
- * Render Routes using ract router.
+ * Render Routes using react router.
  */
 export const App = ()=>(
   <Router>
